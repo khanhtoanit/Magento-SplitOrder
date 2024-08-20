@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_product_add_after">
+        <observer name="kato_splitorder_add_to_cart" instance="Kato\SplitOrder\Observer\CartAddObserver"/>
+    </event>
+    <event name="checkout_cart_product_update_after">
+        <observer name="kato_splitorder_update_item" instance="Kato\SplitOrder\Observer\CartItemUpdateObserver"/>
+    </event>
+    <event name="checkout_cart_update_items_after">
+        <observer name="kato_splitorder_update_items" instance="Kato\SplitOrder\Observer\CartItemsUpdateObserver"/>
+    </event>
+    <event name="sales_quote_remove_item">
+        <observer name="kato_splitorder_cart_remove" instance="Kato\SplitOrder\Observer\CartRemoveObserver"/>
+    </event>
+</config>
